@@ -7,7 +7,7 @@ export class AuthService {
     constructor(private readonly userService: UserService) { }
 
     create(authDto: RegisterDto) {
-        const result = this.userService.updateOrCreate(authDto.username, authDto);
+        const result = this.userService.createUser(authDto);
         return result;
       }
 }

@@ -17,8 +17,8 @@ export class UserController {
   }
 
   @Put(':username')
-  updateOrCreate(@Param('username') username: string, @Body() authDto: RegisterDto) {
-    return this.authService.updateOrCreate(username, authDto);
+  updateOrCreate(@Param('username') @Body() authDto: RegisterDto) {
+    return this.authService.createUser(authDto);
   }
 
   @Delete(':id')
